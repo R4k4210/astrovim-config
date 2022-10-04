@@ -6,14 +6,14 @@
 -- where a value with no key simply has an implicit numeric key
 local mappings = require "user.mappings"
 local plugins = require "user.plugins"
-local astro = require "user.astro"
+local updater = require "user.updater"
 local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
 
 local config = {
 
   -- Configure AstroNvim updates
-  updater = astro,
+  updater = updater,
 
   -- Set colorscheme to use
   colorscheme = "default_theme",

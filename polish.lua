@@ -9,6 +9,18 @@ local polish = function()
   --   command = "source <afile> | PackerSync",
   -- })
 
+  vim.api.nvim_create_autocmd("CursorHold", {
+    desc = "Show diagnostics on CursorHold",
+    pattern = "*",
+    callback = function() vim.diagnostic.open_float(nil, { focus = false }) end,
+  })
+
+  vim.api.nvim_create_autocmd("CursorHoldI", {
+    desc = "Show diagnostics on CursorHold",
+    pattern = "* !silent",
+    callback = function() vim.lsp.buf.signature_help() end,
+  })
+
   -- Set up custom filetypes
   -- vim.filetype.add {
   --   extension = {
