@@ -9,6 +9,7 @@ local plugins = require "user.plugins"
 local updater = require "user.updater"
 local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
+local options = require "user.options"
 
 local config = {
 
@@ -32,14 +33,7 @@ local config = {
   },
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
-  options = {
-    opt = {
-      relativenumber = true, -- sets vim.opt.relativenumber
-    },
-    g = {
-      mapleader = " ", -- sets vim.g.mapleader
-    },
-  },
+  options = options,
   -- If you need more control, you can use the function()...end notation
   -- options = function(local_vim)
   --   local_vim.opt.relativenumber = true
