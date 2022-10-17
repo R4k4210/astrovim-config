@@ -33,6 +33,8 @@ local config = {
   },
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
+  --
+  --
   options = options,
   -- If you need more control, you can use the function()...end notation
   -- options = function(local_vim)

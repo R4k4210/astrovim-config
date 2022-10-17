@@ -22,8 +22,25 @@ local plugins = {
     --   end,
     -- },
     --
-    -- cambiando la cosa esta
+    ["nvim-telescope/telescope-dap.nvim"] = {
+      module = "telescope._extensions.dap",
+    },
+    -- Easey replace
     { "kqito/vim-easy-replace" },
+    -- Debugger -- WIP
+    -- { "mfussenegger/nvim-dap" },
+    -- ["rcarriga/nvim-dap-ui"] = {
+    --   after = "nvim-dap",
+    --   config = require "user.plugins.nvim-dapui",
+    -- },
+    -- ["mxsdev/nvim-dap-vscode-js"] = {
+    --   after = "nvim-dap",
+    --   config = require "user.plugins.dap-vscode-js",
+    -- },
+    -- ["microsoft/vscode-js-debug"] = {
+    --   opt = true,
+    --   run = "npm install --legacy-peer-deps && npm run compile",
+    -- },
   },
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -70,6 +87,7 @@ local plugins = {
   treesitter = { -- overrides `require("treesitter").setup(...)`
     ensure_installed = { "lua", "css", "json", "tsx", "typescript" },
   },
+
   -- use mason-lspconfig to configure LSP installations
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
     ensure_installed = { "sumneko_lua", "tsserver", "tailwindcss" },
