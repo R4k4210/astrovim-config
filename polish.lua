@@ -40,8 +40,8 @@ local polish = function()
   }
 
   -- Solve lazygit problems
-  vim.keymap.del("t", "<esc>")
-  vim.keymap.del("t", "jk")
+  -- vim.keymap.del("t", "<esc>")
+  -- vim.keymap.del("t", "jk")
 end
 
 return polish

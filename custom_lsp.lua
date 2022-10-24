@@ -1,4 +1,8 @@
 local custom_lsp = {
+  formatting = {
+    format_on_save = true,
+    timeout_ms = 1000, -- default format timeout
+  },
   -- enable servers that you already have installed without mason
   servers = {
     -- "pyright"
@@ -13,9 +17,9 @@ local custom_lsp = {
   -- add to the global LSP on_attach function
   -- on_attach = function(client, bufnr)
   -- end,
-  on_attach = function(client, bufnr)
-    if client.name == "astro" then client.resolved_capabilities.document_formatting = false end
-  end,
+  -- on_attach = function(client, bufnr)
+  --   if client.name == "astro" then client.server_capabilities.document_formatting = false end
+  -- end,
   -- override the mason server-registration function
   -- server_registration = function(server, opts)
   --   require("lspconfig")[server].setup(opts)
@@ -41,6 +45,9 @@ local custom_lsp = {
     --     client.resolved_capabilities.document_formatting = false
     --   end
     -- }
+    -- astro = {
+    -- on_attach = function(client, bufnr) client.server_capabilities.document_formatting = false end,
+    -- },
   },
 }
 
