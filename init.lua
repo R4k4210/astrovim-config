@@ -16,8 +16,9 @@ local config = {
   -- Configure AstroNvim updates
   updater = updater,
 
-  -- Set colorscheme to use
-  colorscheme = "default_theme",
+  -- Set colorscheme to use.
+  -- Default: default_theme
+  colorscheme = "catppuccin",
 
   -- Override highlight groups in any theme
   highlights = {

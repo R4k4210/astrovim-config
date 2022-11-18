@@ -1,3 +1,5 @@
+local catppuccin = require "user.plugins.catppuccin";
+
 local plugins = {
   init = {
     -- You can disable default plugins as follows:
@@ -21,7 +23,18 @@ local plugins = {
     --     require("lsp_signature").setup()
     --   end,
     -- },
+    -- Schemes
     --
+    -- prettier and prettier-plugin-solidity should be instaled as dev dependency
+    -- on the proyect, because vim-prettier look for the dependency in project
+    -- node_modules folder. Is not using global dependency!!
+    ['prettier/vim-prettier'] = {
+      run = "yarn install && yarn add prettier-plugin-solidity",
+      filetypes = { "solidity" },
+    },
+
+    { "catppuccin/nvim", as = "catppuccin", config = catppuccin },
+
     ["nvim-telescope/telescope-dap.nvim"] = {
       module = "telescope._extensions.dap",
     },
@@ -52,8 +65,13 @@ local plugins = {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       -- Set a formatter
-      null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.prettierd.with {
+      -- null_ls.builtins.formatting.prettier.with {
+      --   filetype = {
+      --     "solidity"
+      --   },
+      -- },
+      null_ls.builtins.formatting.prettierd.with({
+        extra_filetypes = { "solidity", "md", "astro" },
         filetypes = {
           "javascript",
           "typescript",
@@ -67,9 +85,9 @@ local plugins = {
           "markdown",
           "md",
           "txt",
-          "astro",
+          "astro"
         },
-      },
+      }),
     }
     -- set up null-ls's on_attach function
     -- NOTE: You can uncomment this on attach function to enable format on save
@@ -84,17 +102,18 @@ local plugins = {
     -- end
     return config -- return final config table to use in require("null-ls").setup(config)
   end,
+
   treesitter = { -- overrides `require("treesitter").setup(...)`
-    ensure_installed = { "lua", "css", "json", "tsx", "typescript", "scss" },
+    ensure_installed = { "lua", "css", "json", "tsx", "typescript", "scss", "solidity" },
   },
 
   -- use mason-lspconfig to configure LSP installations
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-    ensure_installed = { "sumneko_lua", "tsserver", "tailwindcss" },
+    ensure_installed = { "sumneko_lua", "tsserver", --[[ "tailwindcss" ]] --[[ "solidity", ]] --[[ "solc" ]] },
   },
   -- use mason-tool-installer to configure DAP/Formatters/Linter installation
   ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
-    ensure_installed = { "prettierd", "stylua" },
+    ensure_installed = { "prettierd", --[[ "prettier" ]] },
   },
   packer = { -- overrides `require("packer").setup(...)`
     compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
