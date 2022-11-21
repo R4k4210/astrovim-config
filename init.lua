@@ -10,88 +10,23 @@ local updater = require "user.updater"
 local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
 local options = require "user.options"
+local highlights = require "user.highlights"
+local header = require "user.header"
+local default_theme = require "user.default_theme"
 
 local config = {
 
-  -- Configure AstroNvim updates
-  updater = updater,
+  updater = updater, -- Configure AstroNvim updates
 
-  -- Set colorscheme to use.
-  -- Default: default_theme
-  colorscheme = "catppuccin",
+  colorscheme = "catppuccin", -- Default: default_theme
 
-  -- Override highlight groups in any theme
-  highlights = {
-    -- duskfox = { -- a table of overrides/changes to the default
-    --   Normal = { bg = "#000000" },
-    -- },
-    default_theme = function(highlights) -- or a function that returns a new table of colors to set
-      local C = require "default_theme.colors"
+  highlights = highlights,
 
-      highlights.Normal = { fg = C.fg, bg = C.bg }
-      return highlights
-    end,
-  },
-
-  -- set vim options here (vim.<first_key>.<second_key> =  value)
-  --
-  --
   options = options,
-  -- If you need more control, you can use the function()...end notation
-  -- options = function(local_vim)
-  --   local_vim.opt.relativenumber = true
-  --   local_vim.g.mapleader = " "
-  --   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
-  --   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
-  --
-  --   return local_vim
-  -- end,
 
-  -- Set dashboard header
-  header = {
-    " █████  ███████ ████████ ██████   ██████",
-    "██   ██ ██         ██    ██   ██ ██    ██",
-    "███████ ███████    ██    ██████  ██    ██",
-    "██   ██      ██    ██    ██   ██ ██    ██",
-    "██   ██ ███████    ██    ██   ██  ██████",
-    " ",
-    "    ███    ██ ██    ██ ██ ███    ███",
-    "    ████   ██ ██    ██ ██ ████  ████",
-    "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-    "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-    "    ██   ████   ████   ██ ██      ██",
-  },
+  header = header, -- Set dashboard header
 
-  -- Default theme configuration
-  default_theme = {
-    -- set the highlight style for diagnostic messages
-    diagnostics_style = { italic = true },
-    -- Modify the color palette for the default theme
-    colors = {
-      fg = "#abb2bf",
-      bg = "#1e222a",
-    },
-    -- enable or disable highlighting for extra plugins
-    plugins = {
-      aerial = true,
-      beacon = false,
-      bufferline = true,
-      dashboard = true,
-      highlighturl = true,
-      hop = false,
-      indent_blankline = true,
-      lightspeed = false,
-      ["neo-tree"] = true,
-      notify = true,
-      ["nvim-tree"] = false,
-      ["nvim-web-devicons"] = true,
-      rainbow = true,
-      symbols_outline = false,
-      telescope = true,
-      vimwiki = false,
-      ["which-key"] = true,
-    },
-  },
+  default_theme = default_theme, -- Default theme configuration
 
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
@@ -102,11 +37,6 @@ local config = {
   -- Extend LSP configuration
   lsp = custom_lsp,
 
-  -- Mapping data with "desc" stored directly by vim.keymap.set().
-  --
-  -- Please use this mappings table to set keyboard mapping since this is the
-  -- lower level configuration and more robust one. (which-key will
-  -- automatically pick-up stored data by this setting.)
   mappings = mappings,
 
   -- Configure plugins
