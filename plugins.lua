@@ -1,17 +1,22 @@
-local catppuccin = require "user.plugins.catppuccin";
-
 local plugins = {
   init = {
     -- You can disable default plugins as follows:
     -- ["rcarriga/nvim-notify"] = { disable = true },
 
-    { "catppuccin/nvim", as = "catppuccin", config = catppuccin },
+    ["catppuccin/nvim"] = {
+      as = "catppuccin",
+      config = function()
+        require("user.plugins.catppuccin")
+      end
+    },
 
     ["nvim-telescope/telescope-dap.nvim"] = {
       module = "telescope._extensions.dap",
     },
     -- Easey replace
     { "kqito/vim-easy-replace" },
+    -- Solidity
+    { "tomlion/vim-solidity" },
 
   },
   -- All other entries override the require("<key>").setup({...}) call for default plugins
@@ -28,6 +33,7 @@ local plugins = {
         bin = "prettierd",
         extra_filetypes = { "solidity", "md", "astro" },
       }),
+
       -- null_ls.builtins.formatting.prettierd.with({
       --   extra_filetypes = { "solidity", "md", "astro" },
       --   filetypes = {
@@ -46,6 +52,8 @@ local plugins = {
       --     "astro"
       --   },
       -- }),
+      -- Set a diagnostics
+      -- null_ls.builtins.diagnostics.solhint,
     }
     return config -- return final config table to use in require("null-ls").setup(config)
   end,
@@ -56,11 +64,12 @@ local plugins = {
 
   -- use mason-lspconfig to configure LSP installations
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-    ensure_installed = { "sumneko_lua", "tsserver", --[[ "tailwindcss" ]] --[[ "solidity", ]] --[[ "solc" ]] },
+    ensure_installed = { "sumneko_lua", "tsserver", "solc", "solidity_ls", --[[ "tailwindcss" ]] --[[ "solidity", ]]
+      --[[ "solc" ]] },
   },
   -- use mason-tool-installer to configure DAP/Formatters/Linter installation
   ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
-    ensure_installed = { "prettierd", --[[ "prettier" ]] },
+    ensure_installed = { "prettierd", "prettier" },
   },
   packer = { -- overrides `require("packer").setup(...)`
     compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
