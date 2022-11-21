@@ -13,11 +13,11 @@ local polish = function()
   })
 
   -- This is necessary for vim-prettier
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    desc = "Prettier solidity plugin",
-    pattern = "*.sol",
-    command = "Prettier"
-  })
+  -- vim.api.nvim_create_autocmd("BufWritePre", {
+  --   desc = "Prettier solidity plugin",
+  --   pattern = "*.sol",
+  --   command = "Prettier"
+  -- })
 
   -- This is not working, but will be good to use the global library
   -- vim.cmd([[
