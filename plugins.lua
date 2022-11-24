@@ -1,7 +1,7 @@
 local plugins = {
   init = {
     -- You can disable default plugins as follows:
-    -- ["rcarriga/nvim-notify"] = { disable = true },
+    ["rcarriga/nvim-notify"] = { disable = true },
 
     ["catppuccin/nvim"] = {
       as = "catppuccin",
@@ -17,7 +17,13 @@ local plugins = {
     { "kqito/vim-easy-replace" },
     -- Solidity
     { "tomlion/vim-solidity" },
-
+    -- Debugger
+    { "mxsdev/nvim-dap-vscode-js" },
+    { "mfussenegger/nvim-dap" },
+    ["rcarriga/nvim-dap-ui"] = { config = function()
+      require("user.plugins.nvim-dapui")
+    end },
+    -- Tabnine
   },
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -33,27 +39,6 @@ local plugins = {
         bin = "prettierd",
         extra_filetypes = { "solidity", "md", "astro" },
       }),
-
-      -- null_ls.builtins.formatting.prettierd.with({
-      --   extra_filetypes = { "solidity", "md", "astro" },
-      --   filetypes = {
-      --     "javascript",
-      --     "typescript",
-      --     "javascriptreact",
-      --     "typescriptreact",
-      --     "css",
-      --     "scss",
-      --     "html",
-      --     "json",
-      --     "yaml",
-      --     "markdown",
-      --     "md",
-      --     "txt",
-      --     "astro"
-      --   },
-      -- }),
-      -- Set a diagnostics
-      -- null_ls.builtins.diagnostics.solhint,
     }
     return config -- return final config table to use in require("null-ls").setup(config)
   end,
@@ -63,9 +48,10 @@ local plugins = {
   },
 
   -- use mason-lspconfig to configure LSP installations
+  -- for solidity-ls (solidity) - remember to install solc compiler in the PATH.
+  -- https://docs.soliditylang.org/en/develop/installing-solidity.html
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-    ensure_installed = { "sumneko_lua", "tsserver", "solc", "solidity_ls", --[[ "tailwindcss" ]] --[[ "solidity", ]]
-      --[[ "solc" ]] },
+    ensure_installed = { "sumneko_lua", "tsserver", "solidity" --[[ "tailwindcss" ]] },
   },
   -- use mason-tool-installer to configure DAP/Formatters/Linter installation
   ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
