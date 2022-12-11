@@ -17,13 +17,8 @@ local plugins = {
     { "kqito/vim-easy-replace" },
     -- Solidity
     { "tomlion/vim-solidity" },
-    -- Debugger
-    { "mxsdev/nvim-dap-vscode-js" },
-    { "mfussenegger/nvim-dap" },
-    ["rcarriga/nvim-dap-ui"] = { config = function()
-      require("user.plugins.nvim-dapui")
-    end },
-    -- Tabnine
+    -- Function list
+    { "yegappan/taglist" },
   },
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -47,7 +42,7 @@ local plugins = {
     ensure_installed = { "lua", "css", "json", "tsx", "typescript", "scss", "solidity" },
   },
 
-  -- use mason-lspconfig to configure LSP installations
+  -- use mason-lspconfig to configure LSP installation
   -- for solidity-ls (solidity) - remember to install solc compiler in the PATH.
   -- https://docs.soliditylang.org/en/develop/installing-solidity.html
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
@@ -56,6 +51,9 @@ local plugins = {
   -- use mason-tool-installer to configure DAP/Formatters/Linter installation
   ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
     ensure_installed = { "prettierd", "prettier" },
+  },
+  ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
+    ensure_installed = { "js-debug-adapter", "node-debug2-adapter" },
   },
   packer = { -- overrides `require("packer").setup(...)`
     compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",
