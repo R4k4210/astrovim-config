@@ -2,6 +2,7 @@ local plugins = {
   init = {
     -- You can disable default plugins as follows:
     ["rcarriga/nvim-notify"] = { disable = true },
+    ["rebelot/heirline.nvim"] = { commit = "556666a" },
 
     ["catppuccin/nvim"] = {
       as = "catppuccin",
