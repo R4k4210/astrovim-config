@@ -11,6 +11,8 @@ local options = {
     Tlist_Use_Right_Window = 1,
     Tlist_GainFocus_On_ToggleOpen = 1,
     Tlist_Auto_Update = 1,
+    -- Sonokai Theme
+    sonokai_style = "default",
   },
 }
 

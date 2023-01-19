@@ -1,7 +1,12 @@
 local plugins = {
   init = {
     -- You can disable default plugins as follows:
+    ["mfussenegger/nvim-dap"] = { disable = false },
+    ["rcarriga/nvim-dap-ui"] = { disable = false },
+    ["jayp0521/mason-nvim-dap.nvim"] = { disable = false },
+
     ["rcarriga/nvim-notify"] = { disable = true },
+
     ["rebelot/heirline.nvim"] = { commit = "556666a" },
 
     ["catppuccin/nvim"] = {
@@ -14,6 +19,8 @@ local plugins = {
     ["nvim-telescope/telescope-dap.nvim"] = {
       module = "telescope._extensions.dap",
     },
+
+    { "sainnhe/sonokai" },
     -- Easey replace
     { "kqito/vim-easy-replace" },
     -- Solidity
@@ -54,7 +61,8 @@ local plugins = {
     ensure_installed = { "prettierd", "prettier" },
   },
   ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
-    ensure_installed = { "js-debug-adapter", "node-debug2-adapter" },
+    ensure_installed = { "js-debug-adapter", "node-debug2-adapter", "java-debug-adapter", "java-test",
+      "chrome-debug-adapter" },
   },
   packer = { -- overrides `require("packer").setup(...)`
     compile_path = vim.fn.stdpath "data" .. "/packer_compiled.lua",

@@ -18,7 +18,7 @@ local config = {
 
   updater = updater, -- Configure AstroNvim updates
 
-  colorscheme = "catppuccin", -- Default: default_theme
+  colorscheme = "sonokai", -- Default: default_theme
 
   highlights = highlights,
 
