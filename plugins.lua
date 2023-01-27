@@ -46,6 +46,11 @@ local plugins = {
     return config -- return final config table to use in require("null-ls").setup(config)
   end,
 
+  ["neo-tree"] = function(config)
+    config = require "user.plugins.neotree"
+    return config
+  end,
+
   treesitter = { -- overrides `require("treesitter").setup(...)`
     ensure_installed = { "lua", "css", "json", "tsx", "typescript", "scss", "solidity" },
   },
