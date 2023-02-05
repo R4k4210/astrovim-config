@@ -59,7 +59,7 @@ local plugins = {
   -- for solidity-ls (solidity) - remember to install solc compiler in the PATH.
   -- https://docs.soliditylang.org/en/develop/installing-solidity.html
   ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-    ensure_installed = { "sumneko_lua", "tsserver", "solidity" --[[ "tailwindcss" ]] },
+    ensure_installed = { "sumneko_lua", "tsserver", "solidity", "emmet_ls" --[[ "tailwindcss" ]] },
   },
   -- use mason-tool-installer to configure DAP/Formatters/Linter installation
   ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
