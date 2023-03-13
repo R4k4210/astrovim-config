@@ -1,5 +1,4 @@
 local polish = function()
-
   vim.api.nvim_create_autocmd("CursorHold", {
     desc = "Show diagnostics on CursorHold",
     pattern = "*",

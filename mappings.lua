@@ -23,12 +23,10 @@ local insert = require "user.mappings.insert"
 local normal = require "user.mappings.normal"
 local visual = require "user.mappings.visual"
 
-local mappings = {
-        -- first key is the mode
-        n = normal,
-        i = insert,
-        t = terminal,
-        v = visual,
+return {
+  -- first key is the mode
+  n = normal,
+  i = insert,
+  t = terminal,
+  v = visual,
 }
-
-return mappings

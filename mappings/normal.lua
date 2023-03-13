@@ -24,6 +24,9 @@ local normal = {
   ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
   -- Taglist
   ["<leader>tt"] = { "<cmd>TlistToggle<cr>", desc = "Sort by tabs" },
+  -- Move between buffers
+  L = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+  H = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
 
 }
 

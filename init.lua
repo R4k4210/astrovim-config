@@ -4,44 +4,19 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
-local mappings = require "user.mappings"
-local plugins = require "user.plugins"
 local updater = require "user.updater"
 local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
-local options = require "user.options"
-local highlights = require "user.highlights"
-local header = require "user.header"
-local default_theme = require "user.default_theme"
 
 local config = {
-
   updater = updater, -- Configure AstroNvim updates
-
-  colorscheme = "sonokai", -- Default: default_theme
-
-  highlights = highlights,
-
-  options = options,
-
-  header = header, -- Set dashboard header
-
-  default_theme = default_theme, -- Default theme configuration
-
+  colorscheme = "catppuccin", -- Default: default_theme
+  lsp = custom_lsp,
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
     virtual_text = false,
     underline = true,
   },
-
-  -- Extend LSP configuration
-  lsp = custom_lsp,
-
-  mappings = mappings,
-
-  -- Configure plugins
-  plugins = plugins,
-
   -- LuaSnip Options
   luasnip = {
     -- Add paths for including more VS Code style snippets in luasnip
@@ -51,22 +26,16 @@ local config = {
       javascript = { "javascriptreact" },
     },
   },
-
-  -- CMP Source Priorities
-  -- modify here the priorities of default cmp sources
-  -- higher value == higher priority
-  -- The value can also be set to a boolean for disabling default sources:
-  -- false == disabled
-  -- true == 1000
-  cmp = {
-    source_priority = {
-      nvim_lsp = 1000,
-      luasnip = 750,
-      buffer = 500,
-      path = 250,
+  -- Configure require("lazy").setup() options
+  lazy = {
+    defaults = { lazy = true },
+    performance = {
+      rtp = {
+        -- customize default disabled vim plugins
+        disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin", "matchparen" },
+      },
     },
   },
-
   -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
     -- Add bindings which show up as group name
@@ -82,7 +51,6 @@ local config = {
       },
     },
   },
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here

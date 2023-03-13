@@ -13,7 +13,6 @@ local custom_lsp = {
       -- ["<leader>lf"] = false -- disable formatting keymap
     },
   },
-
   -- Add overrides for LSP server settings, the keys are the name of the server
   ["server-settings"] = {
     -- astro = {
