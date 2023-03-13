@@ -1,4 +1,5 @@
 return {
+  { "rcarriga/nvim-notify", enabled = false },
   {
     "mfussenegger/nvim-dap",
     disable = false,
@@ -15,10 +16,6 @@ return {
   {
     "rcarriga/nvim-notify",
     disable = true,
-  },
-  {
-    "rebelot/heirline.nvim",
-    commit = "556666a",
   },
   {
     "nvim-telescope/telescope-dap.nvim",
