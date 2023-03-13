@@ -10,7 +10,7 @@ local polish = require "user.polish"
 
 local config = {
   updater = updater, -- Configure AstroNvim updates
-  colorscheme = "catppuccin", -- Default: default_theme
+  colorscheme = "sonokai", -- Default: default_theme
   lsp = custom_lsp,
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {

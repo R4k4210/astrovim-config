@@ -1,5 +1,4 @@
 return {
-  { "rcarriga/nvim-notify", enabled = false },
   {
     "mfussenegger/nvim-dap",
     disable = false,
@@ -26,5 +25,5 @@ return {
   -- Solidity
   { "tomlion/vim-solidity" },
   -- Function list
-  { "yegappan/taglist" },
+  { "yegappan/taglist", lazy = false },
 }
