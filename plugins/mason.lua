@@ -8,6 +8,7 @@ return {
       ensure_installed = {
         "tsserver",
         "solidity",
+        "jdtls",
         "emmet_ls", --[[ "tailwindcss" ]]
       },
     },
