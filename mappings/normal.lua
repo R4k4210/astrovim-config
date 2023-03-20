@@ -13,9 +13,13 @@ local normal = {
   -- Lazydocker
   ["<leader>md"] = {
     function()
-      require("toggleterm.terminal").Terminal:new({ cmd = "lazydocker", direction = "float",
-        hidden = true }):
-          toggle()
+      require("toggleterm.terminal").Terminal
+        :new({
+          cmd = "lazydocker",
+          direction = "float",
+          hidden = true,
+        })
+        :toggle()
     end,
     desc = "Lazydocker",
   },
@@ -25,9 +29,14 @@ local normal = {
   -- Taglist
   ["<leader>tt"] = { "<cmd>TlistToggle<cr>", desc = "Sort by tabs" },
   -- Move between buffers
-  L = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
-  H = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
-
+  L = {
+    function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+    desc = "Next buffer",
+  },
+  H = {
+    function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+    desc = "Previous buffer",
+  },
 }
 
 return normal

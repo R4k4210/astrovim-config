@@ -9,7 +9,7 @@ return {
         "tsserver",
         "solidity",
         "jdtls",
-        "emmet_ls", --[[ "tailwindcss" ]]
+        "emmet_ls", --"tailwindcss"
       },
     },
   },
@@ -19,8 +19,6 @@ return {
     ensure_installed = {
       "js-debug-adapter",
       "node-debug2-adapter",
-      "java-debug-adapter",
-      "java-test",
       "chrome-debug-adapter",
     },
   },

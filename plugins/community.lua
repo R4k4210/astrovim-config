@@ -7,6 +7,7 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.color.modes-nvim" },
   { import = "astrocommunity.media.pets-nvim" },
+  { import = "astrocommunity.pack.java" },
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
