@@ -9,7 +9,7 @@ return {
         "tsserver",
         "solidity",
         "jdtls",
-        "emmet_ls", --[[ "tailwindcss" ]]
+        "emmet_ls", --"tailwindcss"
       },
     },
   },
