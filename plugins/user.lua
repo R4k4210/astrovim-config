@@ -21,7 +21,7 @@ return {
     module = "telescope._extensions.dap",
   },
   -- Easey replace
-  { "kqito/vim-easy-replace" },
+  { "kqito/vim-easy-replace", lazy = false },
   -- Solidity
   { "tomlion/vim-solidity" },
   -- Function list

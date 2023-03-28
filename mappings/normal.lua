@@ -20,8 +20,8 @@ local normal = {
     desc = "Lazydocker",
   },
   -- Move code
-  ["<A-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
-  ["<A-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
+  ["<C-k>"] = { "<cmd>m .-2<CR>", desc = "move line up" },
+  ["<C-j>"] = { "<cmd>m .+1<CR>", desc = "move line down" },
   -- Taglist
   ["<leader>tt"] = { "<cmd>TlistToggle<cr>", desc = "Sort by tabs" },
   -- Move between buffers
