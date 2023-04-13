@@ -4,12 +4,10 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
-local updater = require "user.updater"
 local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
 
 local config = {
-  updater = updater, -- Configure AstroNvim updates
   colorscheme = "sonokai", -- Default: default_theme
   lsp = custom_lsp,
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
