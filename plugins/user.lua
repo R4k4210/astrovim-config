@@ -1,8 +1,4 @@
 return {
-  {
-    "mfussenegger/nvim-dap",
-    disable = false,
-  },
   -- You can disable default plugins as follows:
   {
     "mfussenegger/nvim-dap",

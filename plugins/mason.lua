@@ -16,10 +16,11 @@ return {
 
   {
     "jay-babu/mason-nvim-dap.nvim",
-    ensure_installed = {
-      "js-debug-adapter",
-      "node-debug2-adapter",
-      "chrome-debug-adapter",
+    tag = "v2.0.1", -- workaround, remove when fixed
+    opts = {
+      ensure_installed = {
+        "js",
+      },
     },
   },
 
@@ -33,9 +34,9 @@ return {
           require("null-ls").register(require("null-ls").builtins.formatting.prettier.with {
             condition = function(utils)
               return utils.root_has_file "package.json"
-                  or utils.root_has_file ".prettierrc"
-                  or utils.root_has_file ".prettierrc.json"
-                  or utils.root_has_file ".prettierrc.js"
+                or utils.root_has_file ".prettierrc"
+                or utils.root_has_file ".prettierrc.json"
+                or utils.root_has_file ".prettierrc.js"
             end,
           })
         end,
@@ -43,9 +44,9 @@ return {
         require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with {
           condition = function(utils)
             return utils.root_has_file "package.json"
-                or utils.root_has_file ".prettierrc"
-                or utils.root_has_file ".prettierrc.json"
-                or utils.root_has_file ".prettierrc.js"
+              or utils.root_has_file ".prettierrc"
+              or utils.root_has_file ".prettierrc.json"
+              or utils.root_has_file ".prettierrc.js"
           end,
         }),
       },
