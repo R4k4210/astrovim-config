@@ -18,8 +18,6 @@ return {
   },
   -- Easey replace
   { "kqito/vim-easy-replace", lazy = false },
-  -- Solidity
-  { "tomlion/vim-solidity" },
   -- Function list
   { "yegappan/taglist", lazy = false },
 }
