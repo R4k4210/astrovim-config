@@ -48,6 +48,11 @@ return {
           [">"] = "next_source",
         },
       },
+      filesystem = {
+        follow_current_file = true,
+        hijack_netrw_behavior = "open_current",
+        use_libuv_file_watcher = true,
+      },
       source_selector = {
         winbar = true, -- toggle to show selector on winbar
         statusline = false,
