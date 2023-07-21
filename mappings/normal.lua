@@ -37,6 +37,9 @@ local normal = {
     function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     desc = "Previous buffer",
   },
+  -- Diffview // overrides default diff
+  ["<leader>gd"] = { "<cmd>DiffviewOpen<cr>", desc = "Diffview open" },
+  ["<leader>gD"] = { "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
 }
 
 return normal

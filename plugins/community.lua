@@ -8,6 +8,10 @@ return {
   { import = "astrocommunity.color.modes-nvim" },
   { import = "astrocommunity.media.pets-nvim" },
   { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.scrolling.mini-animate" },
+  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+  { import = "astrocommunity.note-taking.neorg" },
+  { import = "astrocommunity.git.diffview-nvim" },
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

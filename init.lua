@@ -8,7 +8,7 @@ local custom_lsp = require "user.custom_lsp"
 local polish = require "user.polish"
 
 local config = {
-  colorscheme = "sonokai", -- Default: default_theme
+  colorscheme = "astrodark", -- Default: default_theme
   lsp = custom_lsp,
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {

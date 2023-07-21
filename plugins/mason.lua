@@ -11,6 +11,7 @@ return {
         -- "solidity",
         "jdtls",
         -- "emmet_ls", --"tailwindcss"
+        "emmet_language_server",
       },
     },
   },
