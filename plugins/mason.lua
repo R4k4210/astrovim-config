@@ -7,11 +7,12 @@ return {
     opts = {
       ensure_installed = {
         "tsserver",
-        "stylua",
+        -- "stylua",
         -- "solidity",
         "jdtls",
         -- "emmet_ls", --"tailwindcss"
         "emmet_language_server",
+        -- "solhint",
       },
     },
   },
@@ -34,7 +35,8 @@ return {
         -- prettier
         prettier = function()
           require("null-ls").register(require("null-ls").builtins.formatting.prettier.with {
-            command = "prettierd",
+            extra_files = { "solidity" },
+            command = "prettier",
             condition = function(utils)
               return utils.root_has_file "package.json"
                 or utils.root_has_file ".prettierrc"
@@ -44,17 +46,18 @@ return {
           })
         end,
 
-        -- prettierd
-        -- prettierd = function()
-        --   require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with {
-        --     condition = function(utils)
-        --       return utils.root_has_file "package.json"
-        --         or utils.root_has_file ".prettierrc"
-        --         or utils.root_has_file ".prettierrc.json"
-        --         or utils.root_has_file ".prettierrc.js"
-        --     end,
-        --   })
-        -- end,
+        -- for prettierd
+        prettierd = function()
+          require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with {
+            extra_files = { "solidity" },
+            condition = function(utils)
+              return utils.root_has_file "package.json"
+                or utils.root_has_file ".prettierrc"
+                or utils.root_has_file ".prettierrc.json"
+                or utils.root_has_file ".prettierrc.js"
+            end,
+          })
+        end,
       },
     },
   },
