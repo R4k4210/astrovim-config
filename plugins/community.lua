@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.pack.dart" },
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
