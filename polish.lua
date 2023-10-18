@@ -11,6 +11,15 @@ local polish = function()
     callback = function() vim.lsp.buf.signature_help() end,
   })
 
+  vim.api.nvim_create_augroup("matchup_matchparen_highlight", { clear = true })
+
+  vim.api.nvim_create_autocmd("User", {
+    desc = "Highlight MatchParen",
+    pattern = "AstroColorScheme",
+    group = "matchup_matchparen_highlight",
+    callback = function() vim.cmd "highlight MatchParen ctermbg=blue guibg=lightblue cterm=italic gui=italic" end,
+  })
+
   -- This is necessary for vim-prettier
   -- vim.api.nvim_create_autocmd("BufWritePre", {
   --   desc = "Prettier solidity plugin",
