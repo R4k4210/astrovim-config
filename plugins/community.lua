@@ -6,6 +6,7 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.color.modes-nvim" },
+  { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.media.pets-nvim" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.cs" },
@@ -13,9 +14,10 @@ return {
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
   { import = "astrocommunity.note-taking.neorg" },
   { import = "astrocommunity.git.diffview-nvim" },
-  { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.pack.dart" },
+  { import = "astrocommunity.motion.vim-matchup" },
+  { import = "astrocommunity.editing-support.zen-mode-nvim" },
 
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
 }

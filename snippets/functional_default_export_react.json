@@ -2,15 +2,15 @@
   "setup": {
     "prefix": ["newfc"],
     "body": [
-      "import React, { ReactElement } from 'react';",
-      "import styles from './${TM_FILENAME_BASE}.scss';",
+      "import { ReactElement } from 'react';",
+      "import styles from './${TM_FILENAME_BASE}.module.scss';",
       "",
       "interface I${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} {",
       "\tfoo?: string;",
       "}",
       "",
       "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = ({ foo }: I${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}): ReactElement => {",
-      "\treturn <div className='container'>{foo}</div>;",
+      "\treturn <div className={styles.container}>{foo}</div>;",
       "}",
       "",
       "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};"
