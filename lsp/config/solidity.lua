@@ -1,6 +1,4 @@
--- return { //Esto está mal, pero la config es así
---
--- solidity = function()
+-- return function()
 --   -- local root_patterns = { "package.json" }
 --   -- local root_dir = lspconfig_util.root_pattern(root_patterns)
 --   local lspconfig = require "lspconfig"
@@ -11,5 +9,4 @@
 --     root_dir = lspconfig.util.find_git_ancestor,
 --     single_file_support = true,
 --   }
--- end,
--- }
+-- end
