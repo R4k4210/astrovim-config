@@ -4,12 +4,9 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
-local custom_lsp = require "user.custom_lsp"
-local polish = require "user.polish"
 
 local config = {
   colorscheme = "astrodark", -- Default: default_theme
-  lsp = custom_lsp,
   -- Diagnostics configuration (for vim.diagnostics.config({...}))
   diagnostics = {
     virtual_text = false,
@@ -49,10 +46,6 @@ local config = {
       },
     },
   },
-  -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
-  polish = polish,
 }
 
 return config
